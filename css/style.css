@@ -1,0 +1,255 @@
+:root{
+    --mainColor:#595656;
+    --lightColor:#fff;
+    --dark-100:#000;
+    --dark-75:#1b1b1b;
+    --dark-50:#202020;
+    --accent:#3EA0CD;
+    --marker-sei:#477096ad;
+    --marker-shi:#854492ad;
+    --transition-adjust: 0.3s ease;;
+}
+
+body{
+    background-color: var(--dark-50);
+    background: radial-gradient(circle, transparent 20%, var(--dark-50) 20%, var(--dark-50) 80%, transparent 80%, transparent),
+    radial-gradient(circle, transparent 20%, var(--dark-50) 20%, var(--dark-50) 80%, transparent 80%, transparent) 50px 50px,
+    linear-gradient(var(--dark-75) 4px, transparent 4px) 0 -2px,
+    linear-gradient(90deg, var(--dark-75) 4px, var(--dark-50) 4px) -2px 0;
+    background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+    height: 300px;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    color: white;
+}
+::selection {
+	background: var(--mainColor);
+}
+.clearfix{
+    clear: both;
+}
+
+
+#splash {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      background:var(--mainColor);
+      text-align:center;
+    }
+    
+    #splash_logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    
+    #splash_logo img {
+        width:200px;
+     }
+    
+    .fadeUp{
+        animation-name: fadeUpAnime;
+        animation-duration:0.5s;
+        animation-fill-mode:forwards;
+        opacity: 0;
+        }
+        
+        @keyframes fadeUpAnime{
+            from {
+                opacity: 0;
+                transform: translateX(-150px);
+            }
+        
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    
+#top{
+    margin: auto;
+
+    width: 80%;
+    height:15px ;
+    text-align: right;
+}
+
+.ui-tooltip {
+    background-color: rgba(0, 0, 0, 0.5);
+    color:var(--lightColor);
+	font-size: 12px;
+	box-shadow: none;
+}
+
+#about{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: auto;
+    width: 80%;
+}
+#characterfilter{
+    margin: auto;
+    width:80%;
+    text-align: left;
+
+}
+#characters{
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.1);    
+    backdrop-filter: saturate(180%) blur(5px);
+}
+
+.btn{
+    text-align: center;
+    background: linear-gradient(90deg, #7c7c7c 0%,var(--mainColor) 40%, var(--accent) 100%);
+    background-position: 1% 50%;
+    background-size: 200% auto;
+    margin: auto;
+    display: inline-block;
+    width: 100px;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+    transition:  var(--transition-adjust);
+    opacity: 0.9;
+}
+.btn:hover{
+    background-position: 50% 50%;
+    cursor: default;
+    opacity:1;
+}
+.btn.active{
+    background-position: 100% 50%;
+    opacity:1;
+
+}
+
+.charaHover {
+	position: relative;
+	width: 217px;
+	height: 500px;
+	margin: 0 auto;
+	display: inline-block;
+	overflow: hidden;
+    cursor: pointer;
+}
+.charaHover img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+	display: block;
+	-webkit-transition: var(--transition-adjust);
+	transition: var(--transition-adjust);
+}
+.charaHover:hover img:nth-of-type(2) {
+	opacity: 0;
+}
+
+#charaIntro{
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    overflow:auto;
+    background-color: rgba(255, 255, 255, 0.05);    
+    backdrop-filter: saturate(180%) blur(5px);
+}
+
+.introImg{
+    float: left;
+    padding-left: 10%;
+    width: 30%;
+
+}
+.introImg img{
+    width: 100%;
+    min-width: 200px;
+    max-width: 300px;
+
+}
+.introText{
+    width:40%;
+    min-width: 18rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    float: left;
+    text-align: left;
+}
+.name{
+    font-size: 40px;
+    padding-top:3rem;
+}
+.frommarker{ background: linear-gradient(90deg, var(--marker-sei) 0%,transparent 100%);}
+.lostmarker{ background: linear-gradient(90deg, var(--marker-shi) 0%, transparent 100%);}
+.fromnlost{background: linear-gradient(90deg, var(--marker-sei) 0%,var(--marker-shi) 66%,transparent 100%)}
+
+#kaimiIntro,#shachenIntro,#hikaruIntro,#nozomuIntro,#ayaIntro,#suzutoIntro,#theoIntro,#grimIntro,#hibikiIntro,#genIntro{
+    display: none;
+}
+
+#footer{
+    padding:0.8rem;
+    background-color:var(--mainColor);
+    text-align: center;
+}
+#footer a,#about a{
+    padding-bottom: 0.2rem;
+    padding-top: 0.1rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    color:var(--accent);
+    background-color: none;
+    transition: var(--transition-adjust);
+}
+#footer a:hover,#about a:hover{
+
+    background-color: var(--lightColor);
+    color:var(--mainColor);
+}
+#backToTop {
+    max-width: 80px;
+	position: fixed;
+	right: 2rem;
+	bottom:4.2rem;
+	z-index: 2;
+    opacity: 0;
+	transform: translateY(100px);
+}
+#backToTop.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+#backToTop.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 0;
+	transform: translateY(100px);
+  }
+}

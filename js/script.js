@@ -1,17 +1,25 @@
 $(document).ready(function(){
 
-//Loading
+    var screenWidth, screenHeight, dialogWidth, dialogHeight;
+
+    screenHeight=$(window).height();
+    screenWidth=$(document).width();
+
+    if ( screenWidth < 480 ) {
+        dialogWidth = screenWidth * .9;
+        dialogHeight = 650;
+    } else {
+        dialogWidth = screenWidth *.7
+        dialogHeight = screenHeight *.7;
+        isDesktop = true;
+    }
+
     $(window).on('load',function(){
-        $("#splash").delay(1300).fadeOut('slow');
-        $("#splash_logo").delay(1200).fadeOut('slow');
-      });
-
-      $(document).tooltip({
-        position:{
-            my:0,at:'top-20px',
-        }
-    })
-
+        $("#splash-logo").delay(1200).fadeOut('slow');        
+        $("#splash").delay(1500).fadeOut('slow',function(){
+        $('body').addClass('appear');
+        });
+    });
 //Back to top
       function PageTopAnime() {
         var scroll = $(window).scrollTop();
@@ -83,125 +91,100 @@ $(document).ready(function(){
     })
 
 //charainfo
-    $('#theo').click(function(){
-        $('#shachenIntro').slideUp();
-        $('#kaimiIntro').slideUp();
-        $('#hikaruIntro').slideUp();
-        $('#nozomuIntro').slideUp();
-        $('#ayaIntro').slideUp();
-        $('#suzutoIntro').slideUp();
-        $('#hibikiIntro').slideUp();
-        $('#grimIntro').slideUp();
-        $('#genIntro').slideUp();        
-        $('#theoIntro').slideToggle();
-    })
+
     $('#shachen').click(function(){
-        $('#theoIntro').slideUp();
-        $('#kaimiIntro').slideUp();
-        $('#hikaruIntro').slideUp();
-        $('#nozomuIntro').slideUp();
-        $('#ayaIntro').slideUp();
-        $('#suzutoIntro').slideUp();  
-        $('#hibikiIntro').slideUp();
-        $('#grimIntro').slideUp();    
-        $('#genIntro').slideUp();        
-        $('#shachenIntro').slideToggle();
+        $('#shachenIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
     })
+
     $('#hikaru').click(function(){
-        $('#theoIntro').slideUp();
-        $('#shachenIntro').slideUp();
-        $('#kaimiIntro').slideUp();
-        $('#nozomuIntro').slideUp();
-        $('#ayaIntro').slideUp();
-        $('#suzutoIntro').slideUp();
-        $('#hibikiIntro').slideUp();
-        $('#grimIntro').slideUp();
-        $('#genIntro').slideUp();      
-        $('#hikaruIntro').slideToggle();
+        $('#hikaruIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
     })
     $('#grim').click(function(){
-        $('#theoIntro').slideUp();
-        $('#shachenIntro').slideUp();
-        $('#kaimiIntro').slideUp();
-        $('#nozomuIntro').slideUp();
-        $('#ayaIntro').slideUp();
-        $('#suzutoIntro').slideUp();
-        $('#hikaruIntro').slideUp();
-        $('#hibikiIntro').slideUp();
-        $('#hibikiIntro').slideUp();
-        $('#genIntro').slideUp();    
-        $('#grimIntro').slideToggle();
+        $('#grimIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
     })
     $('#kaimi').click(function(){
-        $('#theoIntro').slideUp();
-        $('#shachenIntro').slideUp();
-        $('#hikaruIntro').slideUp();
-        $('#nozomuIntro').slideUp();
-        $('#ayaIntro').slideUp();
-        $('#suzutoIntro').slideUp();
-        $('#hibikiIntro').slideUp();
-        $('#grimIntro').slideUp(); 
-        $('#genIntro').slideUp();     
-        $('#kaimiIntro').slideToggle();
+        $('#kaimiIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
     })
-    $('#hibiki').click(function(){
-        $('#theoIntro').slideUp();
-        $('#shachenIntro').slideUp();
-        $('#kaimiIntro').slideUp();
-        $('#nozomuIntro').slideUp();
-        $('#ayaIntro').slideUp();
-        $('#suzutoIntro').slideUp();
-        $('#hikaruIntro').slideUp();
-        $('#grimIntro').slideUp();
-        $('#genIntro').slideUp();    
-        $('#hibikiIntro').slideToggle();
-    })
+
     $('#nozomu').click(function(){
-        $('#theoIntro').slideUp();
-        $('#shachenIntro').slideUp();
-        $('#hikaruIntro').slideUp();
-        $('#kaimiIntro').slideUp();
-        $('#ayaIntro').slideUp();
-        $('#suzutoIntro').slideUp();
-        $('#hibikiIntro').slideUp();
-        $('#grimIntro').slideUp(); 
-        $('#genIntro').slideUp();     
-        $('#nozomuIntro').slideToggle();
+        $('#nozomuIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
     })
+
     $('#aya').click(function(){
-        $('#theoIntro').slideUp();
-        $('#shachenIntro').slideUp();
-        $('#hikaruIntro').slideUp();
-        $('#kaimiIntro').slideUp();
-        $('#nozomuIntro').slideUp();
-        $('#suzutoIntro').slideUp(); 
-        $('#hibikiIntro').slideUp();
-        $('#grimIntro').slideUp();   
-        $('#genIntro').slideUp();    
-        $('#ayaIntro').slideToggle();
+        $('#ayaIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
     })
+
     $('#suzuto').click(function(){
-        $('#theoIntro').slideUp();
-        $('#shachenIntro').slideUp();
-        $('#hikaruIntro').slideUp();
-        $('#kaimiIntro').slideUp();
-        $('#nozomuIntro').slideUp();
-        $('#ayaIntro').slideUp();
-        $('#hibikiIntro').slideUp();
-        $('#grimIntro').slideUp();  
-        $('#genIntro').slideUp();    
-        $('#suzutoIntro').slideToggle();
+        $('#suzutoIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
     })
     $('#gen').click(function(){
-        $('#theoIntro').slideUp();
-        $('#shachenIntro').slideUp();
-        $('#hikaruIntro').slideUp();
-        $('#kaimiIntro').slideUp();
-        $('#nozomuIntro').slideUp();
-        $('#ayaIntro').slideUp();
-        $('#hibikiIntro').slideUp();
-        $('#grimIntro').slideUp();    
-        $('#suzutoIntro').slideUp();
-        $('#genIntro').slideToggle();  
+        $('#genIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
+    })
+    $('#alex').click(function(){
+        $('#alexIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
+    })
+    $('#ryou').click(function(){
+        $('#ryouIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
+    })
+    $('#megumi').click(function(){
+        $('#megumiIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
+    })
+    $('#yuito').click(function(){
+        $('#yuitoIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
+    })
+    $('#tomori').click(function(){
+        $('#tomoriIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
     })
 })

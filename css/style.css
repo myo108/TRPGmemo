@@ -11,6 +11,7 @@
 }
 
 body{
+    margin: 0;
     background-color: var(--dark-50);
     background: radial-gradient(circle, transparent 20%, var(--dark-50) 20%, var(--dark-50) 80%, transparent 80%, transparent),
     radial-gradient(circle, transparent 20%, var(--dark-50) 20%, var(--dark-50) 80%, transparent 80%, transparent) 50px 50px,
@@ -30,43 +31,88 @@ body{
 
 
 #splash {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: 999;
-      background:var(--mainColor);
-      text-align:center;
-    }
-    
-    #splash_logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    
-    #splash_logo img {
-        width:200px;
-     }
-    
-    .fadeUp{
-        animation-name: fadeUpAnime;
-        animation-duration:0.5s;
-        animation-fill-mode:forwards;
-        opacity: 0;
-        }
-        
-        @keyframes fadeUpAnime{
-            from {
-                opacity: 0;
-                transform: translateX(-150px);
-            }
-        
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
+    margin: 0 auto;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	z-index: 9999999;
+	text-align:center;
+	color:#fff;
+}
+
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+    display: block;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: scaleX(0);
+    background-color: #333;/*伸びる背景色の設定*/
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
     
 #top{
     margin: auto;
@@ -179,20 +225,31 @@ body{
 .introText{
     width:40%;
     min-width: 18rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding:0 3rem;
     float: left;
     text-align: left;
 }
+@media(max-width: 480px){
+    .introImg img{
+        display: none;
+    }
+    .introText{
+        font-size: 16px;
+        line-height: 1.8;
+        padding:0 0.8rem;
+    }
+}
+
+
 .name{
-    font-size: 40px;
+    font-size: 34px;
     padding-top:3rem;
 }
 .frommarker{ background: linear-gradient(90deg, var(--marker-sei) 0%,transparent 100%);}
 .lostmarker{ background: linear-gradient(90deg, var(--marker-shi) 0%, transparent 100%);}
 .fromnlost{background: linear-gradient(90deg, var(--marker-sei) 0%,var(--marker-shi) 66%,transparent 100%)}
 
-#kaimiIntro,#shachenIntro,#hikaruIntro,#nozomuIntro,#ayaIntro,#suzutoIntro,#theoIntro,#grimIntro,#hibikiIntro,#genIntro{
+#kaimiIntro,#shachenIntro,#hikaruIntro,#nozomuIntro,#ayaIntro,#suzutoIntro,#theoIntro,#grimIntro,#hibikiIntro,#genIntro,#alexIntro,#ryouIntro,#megumiIntro,#yuitoIntro,#tomoriIntro{
     display: none;
 }
 
@@ -252,4 +309,25 @@ body{
   	opacity: 0;
 	transform: translateY(100px);
   }
+}
+
+.ui-widget-content{
+    background: #4c4b4bed;
+    color: #ffffff;
+}
+.ui-widget-header{
+    border:none;
+    background: none;
+    color:none
+}
+@media(max-width:480px){
+    .name{
+        padding:0;
+    }
+}
+
+.ui-widget-overlay {
+    background: #000000;
+    opacity: 0.5;
+    filter: Alpha(Opacity=30);
 }

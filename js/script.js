@@ -51,41 +51,61 @@ $(document).ready(function(){
     
     $('#btnAll').click(function(){
         $(this).addClass('active');
-        $('#btnCoC').removeClass('active');
+        $('#btnCoC1').removeClass('active');
+        $('#btnCoC2').removeClass('active');
         $('#btnEmok').removeClass('active');
         $('#btnISN').removeClass('active');
-        $('.CoC').fadeIn();
+        $('.CoC1').fadeIn();
+        $('.CoC2').fadeIn();
         $('.Emok').fadeIn();
         $('.ISN').fadeIn();
 
     })
 
 //filter
-    $('#btnCoC').click(function(){
+    $('#btnCoC1').click(function(){
         $(this).addClass('active');
+        $('#btnCoC2').removeClass('active');
         $('#btnAll').removeClass('active');
         $('#btnEmok').removeClass('active');
         $('#btnISN').removeClass('active');
-        $('.CoC').fadeIn();
+        $('.CoC1').fadeIn();
+        $('.CoC2').fadeOut();
+        $('.Emok').fadeOut();
+        $('.ISN').fadeOut();
+        
+    })
+    $('#btnCoC2').click(function(){
+        $(this).addClass('active');
+        $('#btnCoC1').removeClass('active');
+        $('#btnAll').removeClass('active');
+        $('#btnEmok').removeClass('active');
+        $('#btnISN').removeClass('active');
+        $('.CoC1').fadeOut();
+        $('.CoC2').fadeIn();
         $('.Emok').fadeOut();
         $('.ISN').fadeOut();
         
     })
     $('#btnEmok').click(function(){
         $(this).addClass('active');
-        $('#btnCoC').removeClass('active');
+        $('#btnCoC1').removeClass('active');
+        $('#btnCoC2').removeClass('active');
         $('#btnAll').removeClass('active');
         $('#btnISN').removeClass('active');
-        $('.CoC').fadeOut();
+        $('.CoC1').fadeOut();
+        $('.CoC2').fadeOut();
         $('.Emok').fadeIn();
         $('.ISN').fadeOut();
     })
     $('#btnISN').click(function(){
         $(this).addClass('active');
-        $('#btnCoC').removeClass('active');
+        $('#btnCoC1').removeClass('active');
+        $('#btnCoC2').removeClass('active');
         $('#btnAll').removeClass('active');
         $('#btnEmok').removeClass('active');
-        $('.CoC').fadeOut();
+        $('.CoC1').fadeOut();
+        $('.CoC2').fadeOut();
         $('.Emok').fadeOut();
         $('.ISN').fadeIn();
     })
@@ -182,6 +202,20 @@ $(document).ready(function(){
     })
     $('#tomori').click(function(){
         $('#tomoriIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
+    })
+    $('#oto').click(function(){
+        $('#otoIntro').dialog({
+            width:dialogWidth,
+            height:dialogHeight,
+            modal: true,
+        });
+    })
+    $('#honoka').click(function(){
+        $('#honokaIntro').dialog({
             width:dialogWidth,
             height:dialogHeight,
             modal: true,

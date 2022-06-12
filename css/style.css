@@ -48,14 +48,11 @@ body{
 	transform: translate(-50%, -50%);
 }
 
-/*========= 画面遷移のためのCSS ===============*/
 
-/*画面遷移アニメーション*/
 .splashbg{
     display: none;
 }
 
-/*bodyにappearクラスがついたら出現*/
 body.appear .splashbg{
     display: block;
     content: "";
@@ -66,7 +63,7 @@ body.appear .splashbg{
     top: 0;
 	left: 0;
     transform: scaleX(0);
-    background-color: #333;/*伸びる背景色の設定*/
+    background-color: #333;
 	animation-name:PageAnime;
 	animation-duration:1.2s;
 	animation-timing-function:ease-in-out;
@@ -91,12 +88,12 @@ body.appear .splashbg{
 	}
 }
 
-/*画面遷移の後現れるコンテンツ設定*/
+
 #container{
-	opacity: 0;/*はじめは透過0に*/
+	opacity: 0;
 }
 
-/*bodyにappearクラスがついたら出現*/
+
 body.appear #container{
 	animation-name:PageAnimeAppear;
 	animation-duration:1s;
@@ -249,7 +246,7 @@ body.appear #container{
 .lostmarker{ background: linear-gradient(90deg, var(--marker-shi) 0%, transparent 100%);}
 .fromnlost{background: linear-gradient(90deg, var(--marker-sei) 0%,var(--marker-shi) 66%,transparent 100%)}
 
-#kaimiIntro,#shachenIntro,#hikaruIntro,#nozomuIntro,#ayaIntro,#suzutoIntro,#theoIntro,#grimIntro,#hibikiIntro,#genIntro,#alexIntro,#ryouIntro,#megumiIntro,#yuitoIntro,#tomoriIntro{
+#kaimiIntro,#shachenIntro,#hikaruIntro,#nozomuIntro,#ayaIntro,#suzutoIntro,#theoIntro,#grimIntro,#hibikiIntro,#genIntro,#alexIntro,#ryouIntro,#megumiIntro,#yuitoIntro,#tomoriIntro,#otoIntro,#honokaIntro{
     display: none;
 }
 

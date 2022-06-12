@@ -335,3 +335,6 @@ body.appear #container{
     opacity: 0.5;
     filter: Alpha(Opacity=30);
 }
+.ui-widget.ui-widget-content {
+    border: none;
+}

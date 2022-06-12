@@ -163,6 +163,13 @@ body.appear #container{
     transition:  var(--transition-adjust);
     opacity: 0.9;
 }
+@media(max-width: 480px){
+    .btn{
+        width: 22vw;
+    }
+
+}
+
 .btn:hover{
     background-position: 50% 50%;
     cursor: default;

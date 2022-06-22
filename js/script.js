@@ -112,113 +112,113 @@ $(document).ready(function(){
 
 //charainfo
 
-    $('#shachen').click(function(){
-        $('#shachenIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
+    // $('#shachen').click(function(){
+    //     $('#shachenIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
 
-    $('#hikaru').click(function(){
-        $('#hikaruIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#grim').click(function(){
-        $('#grimIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#kaimi').click(function(){
-        $('#kaimiIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
+    // $('#hikaru').click(function(){
+    //     $('#hikaruIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#grim').click(function(){
+    //     $('#grimIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#kaimi').click(function(){
+    //     $('#kaimiIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
 
-    $('#nozomu').click(function(){
-        $('#nozomuIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
+    // $('#nozomu').click(function(){
+    //     $('#nozomuIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
 
-    $('#aya').click(function(){
-        $('#ayaIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
+    // $('#aya').click(function(){
+    //     $('#ayaIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
 
-    $('#suzuto').click(function(){
-        $('#suzutoIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#gen').click(function(){
-        $('#genIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#alex').click(function(){
-        $('#alexIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#ryou').click(function(){
-        $('#ryouIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#megumi').click(function(){
-        $('#megumiIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#yuito').click(function(){
-        $('#yuitoIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#tomori').click(function(){
-        $('#tomoriIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#oto').click(function(){
-        $('#otoIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
-    $('#honoka').click(function(){
-        $('#honokaIntro').dialog({
-            width:dialogWidth,
-            height:dialogHeight,
-            modal: true,
-        });
-    })
+    // $('#suzuto').click(function(){
+    //     $('#suzutoIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#gen').click(function(){
+    //     $('#genIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#alex').click(function(){
+    //     $('#alexIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#ryou').click(function(){
+    //     $('#ryouIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#megumi').click(function(){
+    //     $('#megumiIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#yuito').click(function(){
+    //     $('#yuitoIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#tomori').click(function(){
+    //     $('#tomoriIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#oto').click(function(){
+    //     $('#otoIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
+    // $('#honoka').click(function(){
+    //     $('#honokaIntro').dialog({
+    //         width:dialogWidth,
+    //         height:dialogHeight,
+    //         modal: true,
+    //     });
+    // })
 })

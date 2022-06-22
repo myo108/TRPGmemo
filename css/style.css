@@ -31,10 +31,10 @@ body{
 
 
 #splash {
-    margin: 0 auto;
-	position: absolute;
+    margin: 0;
+	position: fixed;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	background: #333;
 	z-index: 9999999;
 	text-align:center;
@@ -112,18 +112,9 @@ body.appear #container{
 }
     
 #top{
-    margin: auto;
-
-    width: 80%;
-    height:15px ;
+    padding-top: 3em;
+    width: 85%;
     text-align: right;
-}
-
-.ui-tooltip {
-    background-color: rgba(0, 0, 0, 0.5);
-    color:var(--lightColor);
-	font-size: 12px;
-	box-shadow: none;
 }
 
 #about{
@@ -144,6 +135,10 @@ body.appear #container{
     width: 80%;
     background-color: rgba(255, 255, 255, 0.1);    
     backdrop-filter: saturate(180%) blur(5px);
+}
+#characters a{
+    color: none;
+    text-decoration: none;
 }
 
 .btn{
@@ -204,6 +199,25 @@ body.appear #container{
 .charaHover:hover img:nth-of-type(2) {
 	opacity: 0;
 }
+.charaHover img:nth-of-type(3) {
+	display: none;
+}
+
+@media(max-width: 480px){
+    .charaHover{
+        margin-top: 1em;
+        max-width: 240px;
+        max-height: 80px;
+        border-radius: 0 2em 0 0;
+    }
+.charaHover img:nth-of-type(1),.charaHover img:nth-of-type(2){
+    display: none;
+}
+.charaHover img:nth-of-type(3){
+    display: block;
+}
+}
+
 
 #charaIntro{
     margin: auto;
@@ -240,7 +254,7 @@ body.appear #container{
     .introText{
         font-size: 16px;
         line-height: 1.8;
-        padding:0 0.8rem;
+        padding:0 0.2rem;
     }
 }
 
@@ -253,9 +267,6 @@ body.appear #container{
 .lostmarker{ background: linear-gradient(90deg, var(--marker-shi) 0%, transparent 100%);}
 .fromnlost{background: linear-gradient(90deg, var(--marker-sei) 0%,var(--marker-shi) 66%,transparent 100%)}
 
-#kaimiIntro,#shachenIntro,#hikaruIntro,#nozomuIntro,#ayaIntro,#suzutoIntro,#theoIntro,#grimIntro,#hibikiIntro,#genIntro,#alexIntro,#ryouIntro,#megumiIntro,#yuitoIntro,#tomoriIntro,#otoIntro,#honokaIntro{
-    display: none;
-}
 
 #footer{
     padding:0.8rem;
@@ -315,26 +326,91 @@ body.appear #container{
   }
 }
 
-.ui-widget-content{
-    background: #4c4b4bed;
-    color: #ffffff;
-}
-.ui-widget-header{
-    border:none;
-    background: none;
-    color:none
-}
 @media(max-width:480px){
     .name{
         padding:0;
     }
 }
 
-.ui-widget-overlay {
-    background: #000000;
-    opacity: 0.5;
-    filter: Alpha(Opacity=30);
+.modal {
+    display: none;
+  }
+  
+  .modal:target {
+    display: flex;
+  }
+  
+  
+  .modal {
+    z-index: 20;
+    text-align: left;
+    backdrop-filter: blur(2px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal:target {
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .modalOverlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    cursor: default;
+  }
+  
+  .modalContent {
+    min-width: 300px;
+    max-height: 480px;
+    position: relative;
+    background-color: #4c4b4bed;
+    padding: 2rem;
+    overflow: hidden;
+    overflow-y: visible;
+    border-radius: 0 1em 0 0;
+
+  }
+  
+  .modalClose {
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1.5rem;
+    display: inline-block;
+  }
+.modal ::-webkit-scrollbar{
+    width: 0.5em;
 }
-.ui-widget.ui-widget-content {
-    border: none;
+.modal ::-webkit-scrollbar-track{
+    margin-block-start: 3rem;
+}
+.modal ::-webkit-scrollbar-thumb{
+    margin: 5px;
+    background: var(--mainColor);
+}
+.modal ::-webkit-scrollbar-thumb:hover{
+    background: #968f8fd0;
+}
+  @media(max-width: 1024px){
+    .modalContent {
+        max-width: 75vw;
+        padding: 2rem 1.5rem;
+    }
+}
+@media(max-width: 480px){
+    .modalContent {
+        max-height: 70vh;
+        padding: 2rem 1.5rem;
+    }
 }

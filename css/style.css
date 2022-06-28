@@ -7,8 +7,12 @@
     --accent:#3EA0CD;
     --marker-sei:#477096ad;
     --marker-shi:#854492ad;
-    --transition-adjust: 0.3s ease;;
+    --transition-adjust:all 0.3s ease;;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
 
 body{
     margin: 0;
@@ -25,10 +29,6 @@ body{
 ::selection {
 	background: var(--mainColor);
 }
-.clearfix{
-    clear: both;
-}
-
 
 #splash {
     margin: 0;
@@ -117,31 +117,21 @@ body.appear #container{
     text-align: right;
 }
 
-#about{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin: auto;
-    width: 80%;
-}
-#characterfilter{
+input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+  }
+.filters {
+    padding: 0;
     margin: auto;
     width:80%;
     text-align: left;
-
-}
-#characters{
-    text-align: center;
-    margin: auto;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.1);    
-    backdrop-filter: saturate(180%) blur(5px);
-}
-#characters a{
-    color: none;
-    text-decoration: none;
-}
-
-.btn{
+  }
+   
+  .filters * {
+    display: inline-block;
+  }
+  .filters label {
     text-align: center;
     background: linear-gradient(90deg, #7c7c7c 0%,var(--mainColor) 40%, var(--accent) 100%);
     background-position: 1% 50%;
@@ -157,22 +147,48 @@ body.appear #container{
     border-top-right-radius: 0.3em;
     transition:  var(--transition-adjust);
     opacity: 0.9;
-}
-@media(max-width: 480px){
-    .btn{
-        width: 22vw;
-    }
-
-}
-
-.btn:hover{
+  }
+   
+  .filters label:hover {
     background-position: 50% 50%;
     cursor: default;
     opacity:1;
+  }  
+  [value="All"]:checked ~ #characters[data-category] {
+    display: block;
+  }
+    [value="CoC1"]:checked ~ #characters .charaHover:not([data-category~="CoC1"]),
+    [value="CoC2"]:checked ~ #characters .charaHover:not([data-category~="CoC2"]),
+    [value="Emok"]:checked ~ #characters .charaHover:not([data-category~="Emok"]),
+    [value="ISN"]:checked ~ #characters .charaHover:not([data-category~="ISN"]) {
+  display: none;
 }
-.btn.active{
+[value="All"]:checked ~ .filters [for="All"],
+[value="CoC1"]:checked ~ .filters [for="CoC1"],
+[value="CoC2"]:checked ~ .filters [for="CoC2"],
+[value="Emok"]:checked ~ .filters [for="Emok"],
+[value="ISN"]:checked ~ .filters [for="ISN"]{
     background-position: 100% 50%;
-    opacity:1;
+}
+
+#characters{
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.1);    
+    backdrop-filter: saturate(180%) blur(5px);
+    border-radius: 0 2em 0 0;
+}
+#characters a{
+    color: none;
+    text-decoration: none;
+}
+
+@media(max-width: 480px){
+    .btn,.filters label{
+        min-width: 110px;
+        width: 22vw;
+    }
 
 }
 
@@ -334,9 +350,12 @@ body.appear #container{
 
 .modal {
     display: none;
+    opacity: 0;
+    transition: var(--transition-adjust);
   }
   
   .modal:target {
+    opacity: 1;
     display: flex;
   }
   
